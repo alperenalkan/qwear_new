@@ -7,16 +7,16 @@ export const images = {
   
   // Hero Section Images
   hero: {
-    slide1: 'https://images.unsplash.com/photo-1570829194611-71a926d70ff8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBTVVYlMjBjYXJ8ZW58MXx8fHwxNzYwOTk0MzkyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    slide2: 'https://images.unsplash.com/photo-1570829194611-71a926d70ff8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBTVVYlMjBjYXJ8ZW58MXx8fHwxNzYwOTk0MzkyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    slide3: 'https://images.unsplash.com/photo-1616191540374-dbea0eda0bfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwY29mZmVlJTIwbWFjaGluZXxlbnwxfHx8fDE3NjA5NzE0ODN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    slide1: '/images/hero/hero2.webp',
+    slide2: '/images/hero/hero1.webp',
+    slide3: '/images/hero/hero3.webp',
   },
 
   // Products Section Images
   products: {
-    chocolate: 'https://images.unsplash.com/photo-1586195831800-24f14c992cea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjaG9jb2xhdGV8ZW58MXx8fHwxNzYxMDI2MzI2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    bmw: 'https://images.unsplash.com/photo-1570829194611-71a926d70ff8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBTVVYlMjBjYXJ8ZW58MXx8fHwxNzYwOTk0MzkyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    coffee: 'https://images.unsplash.com/photo-1616191540374-dbea0eda0bfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwY29mZmVlJTIwbWFjaGluZXxlbnwxfHx8fDE3NjA5NzE0ODN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    chocolate: '/images/products/products1.webp',
+    bmw: '/images/products/products2.webp',
+    coffee: '/images/products/products3.webp',
   },
 
   // About Section Images
@@ -42,19 +42,19 @@ export const images = {
       factory: 'https://images.unsplash.com/photo-1687171304369-1fa77ee75459?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMEJNVyUyMGx1eHVyeSUyMGNhcnxlbnwxfHx8fDE3NjE2NzUzMjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     },
     nespresso: {
-      main: 'https://images.unsplash.com/photo-1670185534697-e1fdd532c855?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBtYWNoaW5lJTIwYmxhY2t8ZW58MXx8fHwxNzYxNjc1MzI3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      gallery1: 'https://images.unsplash.com/photo-1668449026838-af7d1f6b3b3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBWZXJ0dW8lMjBtYWNoaW5lfGVufDF8fHx8MTc2MTY3NTMyN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      gallery2: 'https://images.unsplash.com/photo-1634261945993-7f7ac85eff05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBjb2ZmZWUlMjBtYWtlcnxlbnwxfHx8fDE3NjE2NzUzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      gallery3: 'https://images.unsplash.com/photo-1634261945993-7f7ac85eff05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBjb2ZmZWUlMjBtYWtlcnxlbnwxfHx8fDE3NjE2NzUzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      gallery4: 'https://images.unsplash.com/photo-1670185534697-e1fdd532c855?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBtYWNoaW5lJTIwYmxhY2t8ZW58MXx8fHwxNzYxNjc1MzI3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      gallery5: 'https://images.unsplash.com/photo-1668449026838-af7d1f6b3b3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBWZXJ0dW8lMjBtYWNoaW5lfGVufDF8fHx8MTc2MTY3NTMyN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      gallery6: 'https://images.unsplash.com/photo-1634261945993-7f7ac85eff05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBjb2ZmZWUlMjBtYWtlcnxlbnwxfHx8fDE3NjE2NzUzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      gallery7: 'https://images.unsplash.com/photo-1634261945993-7f7ac85eff05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBjb2ZmZWUlMjBtYWtlcnxlbnwxfHx8fDE3NjE2NzUzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      gallery8: 'https://images.unsplash.com/photo-1670185534697-e1fdd532c855?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBtYWNoaW5lJTIwYmxhY2t8ZW58MXx8fHwxNzYxNjc1MzI3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      main: '/images/carousel/coffeemachines/VERTUO_Next_Premium_Rich_Brown.webp',
+      gallery1: '/images/carousel/coffeemachines/VERTUO_Next_Premium_Rich_Brown.webp',
+      gallery2: '/images/carousel/coffeemachines/CitiZ_Cherry_Red.webp',
+      gallery3: '/images/carousel/coffeemachines/Creatista_Plus_Stainless_Steel.webp',
+      gallery4: '/images/carousel/coffeemachines/Gran_Lattissima_Fresh_Vitality.webp',
+      gallery5: '/images/carousel/coffeemachines/Cafe_Aromis_Series_8000_Philips_Kaffeevollautomat.webp',
+      gallery6: '/images/carousel/coffeemachines/Philips_Barista_Brew_Halbautomatische_Espressomaschine.webp',
+      gallery7: '/images/carousel/coffeemachines/Series_3300_Kaffeevollautomat.webp',
+      gallery8: '/images/carousel/coffeemachines/Series_5500%20Kaffeevollautomat.webp',
       // Legacy support
-      vertuo: 'https://images.unsplash.com/photo-1668449026838-af7d1f6b3b3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBWZXJ0dW8lMjBtYWNoaW5lfGVufDF8fHx8MTc2MTY3NTMyN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      maker: 'https://images.unsplash.com/photo-1634261945993-7f7ac85eff05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBjb2ZmZWUlMjBtYWtlcnxlbnwxfHx8fDE3NjE2NzUzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      maker2: 'https://images.unsplash.com/photo-1634261945993-7f7ac85eff05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXNwcmVzc28lMjBjb2ZmZWUlMjBtYWtlcnxlbnwxfHx8fDE3NjE2NzUzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      vertuo: '/images/carousel/coffeemachines/VERTUO_Next_Premium_Rich_Brown.webp',
+      maker: '/images/carousel/coffeemachines/Creatista_Plus_Stainless_Steel.webp',
+      maker2: '/images/carousel/coffeemachines/Gran_Lattissima_Fresh_Vitality.webp',
     },
     capsules: {
       main: 'https://images.unsplash.com/photo-1736632211111-19e406e8a8ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXNwcmVzc28lMjBjYXBzdWxlc3xlbnwxfHx8fDE3NjEwNjQxMDV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',

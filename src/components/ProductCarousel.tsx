@@ -107,48 +107,11 @@ export function ProductCarousel() {
       description: t.carousel.products.nespressoMachines.description,
       features: t.carousel.products.nespressoMachines.features,
       origin: t.carousel.products.nespressoMachines.origin,
-      gallery: [
-        {
-          title: 'Nespresso Gallery 1',
-          description: 'Premium coffee machines delivering authentic espresso at the touch of a button.',
-          image: images.carousel.nespresso.gallery1,
-        },
-        {
-          title: 'Nespresso Gallery 2',
-          description: 'Revolutionary technology brewing coffee and espresso with smooth, full-bodied taste.',
-          image: images.carousel.nespresso.gallery2,
-        },
-        {
-          title: 'Nespresso Gallery 3',
-          description: 'Premium machines with integrated features for barista-quality beverages at home.',
-          image: images.carousel.nespresso.gallery3,
-        },
-        {
-          title: 'Nespresso Gallery 4',
-          description: 'Professional-grade machines with high capacity and consistent quality.',
-          image: images.carousel.nespresso.gallery4,
-        },
-        {
-          title: 'Nespresso Gallery 5',
-          description: 'Premium coffee machines delivering authentic espresso at the touch of a button.',
-          image: images.carousel.nespresso.gallery5,
-        },
-        {
-          title: 'Nespresso Gallery 6',
-          description: 'Revolutionary technology brewing coffee and espresso with smooth, full-bodied taste.',
-          image: images.carousel.nespresso.gallery6,
-        },
-        {
-          title: 'Nespresso Gallery 7',
-          description: 'Premium machines with integrated features for barista-quality beverages at home.',
-          image: images.carousel.nespresso.gallery7,
-        },
-        {
-          title: 'Nespresso Gallery 8',
-          description: 'Professional-grade machines with high capacity and consistent quality.',
-          image: images.carousel.nespresso.gallery8,
-        },
-      ],
+      gallery: t.carousel.products.nespressoMachines.gallery?.map((item, index) => ({
+        title: item.title,
+        description: item.description,
+        image: images.carousel.nespresso[`gallery${index + 1}` as keyof typeof images.carousel.nespresso] as string,
+      })) || [],
     },
     {
       id: 3,
@@ -491,12 +454,12 @@ export function ProductCarousel() {
                   <div className="grid md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                     {/* Thumbnail Gallery - Left Side */}
                     <div className="md:col-span-1 order-2 md:order-1">
-                      <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto md:max-h-[500px]">
+                      <div className="flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-y-auto md:max-h-[500px] pb-2 md:pb-0 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
                         {selectedProduct.gallery.map((item, index) => (
                           <button
                             key={index}
                             onClick={() => setSelectedGalleryIndex(index)}
-                            className={`flex-shrink-0 relative rounded-lg overflow-hidden transition-all ${
+                            className={`flex-shrink-0 relative rounded-lg overflow-hidden transition-all w-24 h-24 md:w-full md:h-28 lg:h-32 ${
                               selectedGalleryIndex === index
                                 ? 'ring-2 ring-amber-600'
                                 : 'opacity-60 hover:opacity-100'
@@ -505,7 +468,7 @@ export function ProductCarousel() {
                             <img
                               src={item.image}
                               alt={item.title}
-                              className="w-24 h-24 md:w-full md:h-28 lg:h-32 object-cover"
+                              className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                           </button>
@@ -519,7 +482,8 @@ export function ProductCarousel() {
                         <img
                           src={selectedProduct.gallery[selectedGalleryIndex].image}
                           alt={selectedProduct.gallery[selectedGalleryIndex].title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain bg-gray-50"
+                          style={{ maxWidth: '100%', maxHeight: '100%' }}
                         />
                       </div>
                       
@@ -527,9 +491,27 @@ export function ProductCarousel() {
                         <h3 className="text-xl mb-2 text-gray-900">
                           {selectedProduct.gallery[selectedGalleryIndex].title}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 leading-relaxed mb-4">
                           {selectedProduct.gallery[selectedGalleryIndex].description}
                         </p>
+                        
+                        {/* Gallery Item Specific Features */}
+                        {selectedProduct.gallery[selectedGalleryIndex].features && (
+                          <div className="mt-4">
+                            <h4 className="text-lg mb-3 text-gray-900">{t.carousel.features}</h4>
+                            <ul className="grid md:grid-cols-2 gap-3">
+                              {selectedProduct.gallery[selectedGalleryIndex].features.map((feature: string, index: number) => (
+                                <li
+                                  key={index}
+                                  className="flex items-start gap-2 text-gray-600"
+                                >
+                                  <span className="text-amber-600 mt-1">✓</span>
+                                  <span>{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -544,39 +526,6 @@ export function ProductCarousel() {
                   </div>
                 )}
 
-                {/* Product Information */}
-                <div className="space-y-4 border-t pt-4">
-                  <div>
-                    <span className="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm mb-3">
-                      {selectedProduct.category}
-                    </span>
-                    <p className="text-gray-700 leading-relaxed">
-                      {selectedProduct.description}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="text-lg mb-3 text-gray-900">{t.carousel.features}</h4>
-                    <ul className="grid md:grid-cols-2 gap-3">
-                      {selectedProduct.features.map((feature, index) => (
-                        <li
-                          key={index}
-                          className="flex items-start gap-2 text-gray-600"
-                        >
-                          <span className="text-amber-600 mt-1">✓</span>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="border-t pt-4">
-                    <p className="text-gray-700">
-                      <span className="text-gray-900">{t.carousel.origin}:</span>{' '}
-                      {selectedProduct.origin}
-                    </p>
-                  </div>
-                </div>
               </div>
             </>
           )}
