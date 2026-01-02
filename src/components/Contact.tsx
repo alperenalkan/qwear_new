@@ -5,7 +5,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { Card, CardContent } from './ui/card';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { useLanguage } from '../lib/LanguageContext';
 
 export function Contact() {
@@ -19,6 +19,16 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const subject = `Contact Request from ${formData.name}`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`;
+
+    const link = document.createElement('a');
+    link.href = `mailto:info@qwear.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
     toast.success(t.contact.successMessage);
     setFormData({ name: '', email: '', phone: '', message: '' });
   };

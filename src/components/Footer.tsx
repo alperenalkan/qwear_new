@@ -2,17 +2,31 @@ import React, { useState } from 'react';
 import { useLanguage } from '../lib/LanguageContext';
 import { ImpressumModal } from './ImpressumModal';
 import { PrivacyModal } from './PrivacyModal';
+import { Instagram } from 'lucide-react';
 
 export function Footer() {
   const { t } = useLanguage();
   const [impressumOpen, setImpressumOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
-  
+
   return (
     <>
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center space-y-4">
+            {/* Social Media */}
+            <div className="flex gap-4">
+              <a
+                href="https://instagram.com/qwear_de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-amber-400 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-6 w-6" />
+              </a>
+            </div>
+
             {/* Legal Links */}
             <div className="flex gap-6 text-sm">
               <button
@@ -29,7 +43,7 @@ export function Footer() {
                 {t.footer.privacy}
               </button>
             </div>
-            
+
             {/* Copyright */}
             <p className="text-gray-400 text-sm font-gothic-body">© 2025 QWEAR. {t.footer.rights}</p>
           </div>

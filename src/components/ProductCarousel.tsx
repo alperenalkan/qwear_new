@@ -20,6 +20,7 @@ interface Product {
   features: string[];
   origin: string;
   gallery?: GalleryItem[];
+  hidden?: boolean;
 }
 
 export function ProductCarousel() {
@@ -121,6 +122,7 @@ export function ProductCarousel() {
       description: t.carousel.products.nespresso.description,
       features: t.carousel.products.nespresso.features,
       origin: t.carousel.products.nespresso.origin,
+      hidden: true,
       gallery: [
         {
           title: 'Capsules Gallery 1',
@@ -174,44 +176,19 @@ export function ProductCarousel() {
       origin: t.carousel.products.beans.origin,
       gallery: [
         {
-          title: 'Beans Gallery 1',
+          title: 'Italian Classics Qualita Oro Beans 1kg',
           description: 'Premium dark-roasted Arabica beans with intense, bold flavors and rich body.',
-          image: images.carousel.beans.gallery1,
+          image: images.carousel.beans.newGallery1 as string,
         },
         {
-          title: 'Beans Gallery 2',
+          title: 'Espresso Special Edition 1kg Beans',
           description: 'Balanced medium roast combining traditions with smooth, aromatic notes.',
-          image: images.carousel.beans.gallery2,
+          image: images.carousel.beans.newGallery2 as string,
         },
         {
-          title: 'Beans Gallery 3',
+          title: 'Caffe Crema Barista Delicato',
           description: 'Specially selected and roasted for authentic espresso with rich crema.',
-          image: images.carousel.beans.gallery3,
-        },
-        {
-          title: 'Beans Gallery 4',
-          description: 'Premium dark-roasted Arabica beans with intense, bold flavors and rich body.',
-          image: images.carousel.beans.gallery4,
-        },
-        {
-          title: 'Beans Gallery 5',
-          description: 'Balanced medium roast combining traditions with smooth, aromatic notes.',
-          image: images.carousel.beans.gallery5,
-        },
-        {
-          title: 'Beans Gallery 6',
-          description: 'Specially selected and roasted for authentic espresso with rich crema.',
-          image: images.carousel.beans.gallery6,
-        },
-        {
-          title: 'Beans Gallery 7',
-          description: 'Premium dark-roasted Arabica beans with intense, bold flavors and rich body.',
-          image: images.carousel.beans.gallery7,
-        },
-        {
-          title: 'Beans Gallery 8',
-          description: 'Balanced medium roast combining traditions with smooth, aromatic notes.',
-          image: images.carousel.beans.gallery8,
+          image: images.carousel.beans.newGallery3 as string,
         },
       ],
     },
@@ -376,7 +353,7 @@ export function ProductCarousel() {
               }}
             >
               {/* Render products 3 times for infinite loop */}
-              {[...products, ...products, ...products].map((product, index) => (
+              {[...products, ...products, ...products].filter(p => !p.hidden).map((product, index) => (
                 <div
                   key={`${product.id}-${index}`}
                   className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] flex-shrink-0"
@@ -425,11 +402,10 @@ export function ProductCarousel() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === currentIndex
-                  ? 'bg-amber-600 w-8'
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
+              className={`w-2 h-2 rounded-full transition-all ${index === currentIndex
+                ? 'bg-amber-600 w-8'
+                : 'bg-gray-300 hover:bg-gray-400'
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
@@ -447,7 +423,7 @@ export function ProductCarousel() {
                   Product details for {selectedProduct.name}
                 </DialogDescription>
               </DialogHeader>
-              
+
               <div className="space-y-6">
                 {/* Gallery Section */}
                 {selectedProduct.gallery && selectedProduct.gallery.length > 0 ? (
@@ -459,11 +435,11 @@ export function ProductCarousel() {
                           <button
                             key={index}
                             onClick={() => setSelectedGalleryIndex(index)}
-                            className={`flex-shrink-0 relative rounded-lg overflow-hidden transition-all w-24 h-24 md:w-full md:h-28 lg:h-32 ${
-                              selectedGalleryIndex === index
-                                ? 'ring-2 ring-amber-600'
-                                : 'opacity-60 hover:opacity-100'
-                            }`}
+                            className={`flex-shrink-0 relative rounded-lg overflow-hidden transition-all w-24 h-24 md:w-full md:h-28 lg:h-32 bg-cover bg-center ${selectedGalleryIndex === index
+                              ? 'ring-2 ring-amber-600'
+                              : 'opacity-60 hover:opacity-100'
+                              }`}
+                            style={{ backgroundImage: `url(${images.patterns.coffee})` }}
                           >
                             <img
                               src={item.image}
@@ -478,15 +454,18 @@ export function ProductCarousel() {
 
                     {/* Main Image and Description - Right Side */}
                     <div className="md:col-span-3 lg:col-span-4 order-1 md:order-2 space-y-4">
-                      <div className="relative h-64 md:h-[450px] lg:h-[550px] rounded-lg overflow-hidden">
+                      <div
+                        className="relative h-64 md:h-[450px] lg:h-[550px] rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat"
+                        style={{ backgroundImage: `url(${images.patterns.coffee})` }}
+                      >
                         <img
                           src={selectedProduct.gallery[selectedGalleryIndex].image}
                           alt={selectedProduct.gallery[selectedGalleryIndex].title}
-                          className="w-full h-full object-contain bg-gray-50"
+                          className="w-full h-full object-contain"
                           style={{ maxWidth: '100%', maxHeight: '100%' }}
                         />
                       </div>
-                      
+
                       <div>
                         <h3 className="text-xl mb-2 text-gray-900">
                           {selectedProduct.gallery[selectedGalleryIndex].title}
@@ -494,7 +473,7 @@ export function ProductCarousel() {
                         <p className="text-gray-600 leading-relaxed mb-4">
                           {selectedProduct.gallery[selectedGalleryIndex].description}
                         </p>
-                        
+
                         {/* Gallery Item Specific Features */}
                         {selectedProduct.gallery[selectedGalleryIndex].features && (
                           <div className="mt-4">
@@ -517,7 +496,10 @@ export function ProductCarousel() {
                   </div>
                 ) : (
                   // Fallback for products without gallery
-                  <div className="relative h-80 rounded-lg overflow-hidden">
+                  <div
+                    className="relative h-80 rounded-lg overflow-hidden bg-cover bg-center"
+                    style={{ backgroundImage: `url(${images.patterns.coffee})` }}
+                  >
                     <img
                       src={selectedProduct.image}
                       alt={selectedProduct.name}

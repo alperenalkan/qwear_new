@@ -4,7 +4,7 @@
 export const images = {
   // Logo - Local SVG file
   logo: '/images/logo/logo.svg',
-  
+
   // Hero Section Images
   hero: {
     slide1: '/images/hero/hero2.webp',
@@ -17,6 +17,11 @@ export const images = {
     chocolate: '/images/products/products1.webp',
     bmw: '/images/products/products2.webp',
     coffee: '/images/products/products3.webp',
+  },
+
+  // UI Patterns
+  patterns: {
+    coffee: '/images/bg/coffee_pattern_bg.png',
   },
 
   // About Section Images
@@ -81,6 +86,9 @@ export const images = {
       gallery6: 'https://images.unsplash.com/photo-1599766676305-6af85465b875?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMGJlYW5zJTIwYmFnfGVufDF8fHx8MTc2MTY3NDcyOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       gallery7: 'https://images.unsplash.com/photo-1553698249-0e3f9263ffa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMGRhcmt8ZW58MXx8fHwxNzYxMDI1NzYxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       gallery8: 'https://images.unsplash.com/photo-1652248920808-2246c8011c2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMHJvYXN0ZWR8ZW58MXx8fHwxNzYxNjc0NzI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      newGallery1: '/images/carousel/coffeemachines_bean/2055-d-Italian-Classics_Qualita Oro_Beans_1kg-@2.png',
+      newGallery2: '/images/carousel/coffeemachines_bean/d-Espresso-Special-Edition-1kg-beans@2.png',
+      newGallery3: '/images/carousel/coffeemachines_bean/d-caffe-crema-barista-delicato-@2.png',
       // Legacy support
       dark: 'https://images.unsplash.com/photo-1553698249-0e3f9263ffa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMGRhcmt8ZW58MXx8fHwxNzYxMDI1NzYxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       roasted: 'https://images.unsplash.com/photo-1652248920808-2246c8011c2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMHJvYXN0ZWR8ZW58MXx8fHwxNzYxNjc0NzI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
@@ -123,17 +131,17 @@ export const images = {
 export const getImagePath = (category: string, subcategory?: string, image?: string): string => {
   const categoryObj = images[category as keyof typeof images];
   if (!categoryObj) return '';
-  
+
   if (subcategory && image) {
     const subcategoryObj = categoryObj[subcategory as keyof typeof categoryObj];
     if (typeof subcategoryObj === 'object' && subcategoryObj !== null) {
       return subcategoryObj[image as keyof typeof subcategoryObj] as string || '';
     }
   }
-  
+
   if (subcategory) {
     return categoryObj[subcategory as keyof typeof categoryObj] as string || '';
   }
-  
+
   return '';
 };
