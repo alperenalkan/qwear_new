@@ -380,7 +380,7 @@ export const translations = {
         title: 'Impressum',
         companyInfo: 'Company Information',
         companyName: 'QWEAR Import-Export GmbH',
-        address: 'Your Company Address',
+        address: 'Klagenfurter Ring 8 65187 Wiesbaden',
         country: 'Germany',
         management: 'Management',
         contact: 'Contact',

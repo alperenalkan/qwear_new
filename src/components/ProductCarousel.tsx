@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from './ui/dialog';
@@ -9,6 +9,7 @@ interface GalleryItem {
   title: string;
   description: string;
   image: string;
+  features?: string[];
 }
 
 interface Product {
@@ -427,10 +428,10 @@ export function ProductCarousel() {
               <div className="space-y-6">
                 {/* Gallery Section */}
                 {selectedProduct.gallery && selectedProduct.gallery.length > 0 ? (
-                  <div className="grid md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+                  <div className="flex gap-4 md:gap-6">
                     {/* Thumbnail Gallery - Left Side */}
-                    <div className="md:col-span-1 order-2 md:order-1">
-                      <div className="flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-y-auto md:max-h-[500px] pb-2 md:pb-0 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+                    <div className="w-20 sm:w-24 md:w-32 lg:w-40 flex-shrink-0">
+                      <div className="flex flex-col gap-2 overflow-y-auto max-h-[350px] md:max-h-[500px] pb-2 md:pb-0 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
                         {selectedProduct.gallery.map((item, index) => (
                           <button
                             key={index}
@@ -453,7 +454,7 @@ export function ProductCarousel() {
                     </div>
 
                     {/* Main Image and Description - Right Side */}
-                    <div className="md:col-span-3 lg:col-span-4 order-1 md:order-2 space-y-4">
+                    <div className="flex-1 space-y-4">
                       <div
                         className="relative h-64 md:h-[450px] lg:h-[550px] rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat"
                         style={{ backgroundImage: `url(${images.patterns.coffee})` }}

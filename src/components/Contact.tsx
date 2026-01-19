@@ -182,14 +182,21 @@ export function Contact() {
             <Card className="overflow-hidden">
               <div className="h-64 bg-gray-200 relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.0!2d8.2472!3d50.0359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDAyJzA5LjIiTiA4wrAxNCc1MC4wIkU!5e0!3m2!1sen!2s!4v1234567890"
+                  src="https://maps.google.com/maps?q=Klagenfurter+Ring+8,65187+Wiesbaden&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   title="QWEAR Location"
-                  className="absolute inset-0"
+                  className="absolute inset-0 pointer-events-none"
+                />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Klagenfurter+Ring+8+65187+Wiesbaden"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 z-10"
+                  aria-label="Open in Google Maps"
                 />
               </div>
             </Card>
